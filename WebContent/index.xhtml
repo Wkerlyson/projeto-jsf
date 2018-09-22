@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+
+</h:head>
+
+<h:body>
+	<br />
+	<h:form id="frm">
+		<p:inputText value="#{indexBean.usuario.nome}" />
+
+		<p:commandButton style="margin-left: 5px" update="frm"
+			action="#{indexBean.adicionarUsuario()}" value="Adicionar Usuário" />
+
+		<p:commandButton style="margin-left: 5px" update="frm"
+			action="#{indexBean.limpar()}" value="Limpar" />
+
+		<br />
+		<br />
+
+		<p:dataTable id="tabela-usuarios" value="#{indexBean.usuarios}"
+			var="usuario" emptyMessage="Nenhum usuario adicionado">
+
+			<p:column headerText="Nome">
+				<h:outputLabel value="#{usuario.nome}" />
+			</p:column>
+
+			<p:column headerText="Exluir" width="100" style="text-align: center">
+				<p:commandButton value="O" oncomplete="PF('dialog').show();"
+					action="#{indexBean.mostrarSelecionado(usuario)}" update="frm" />
+			</p:column>
+
+		</p:dataTable>
+
+
+		<p:dialog id="dialog" widgetVar="dialog" closable="true"
+			header="Detalhes" modal="true" width="300">
+
+			<br/>
+			
+			<p:outputLabel value="#{indexBean.usuario.nome}"/>
+
+		</p:dialog>
+	</h:form>
+
+
+</h:body>
+
+</html>
