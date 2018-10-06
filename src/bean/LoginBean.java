@@ -6,6 +6,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
 import model.Usuario;
+import util.FacesUtil;
 
 @ManagedBean
 @ViewScoped
@@ -17,9 +18,9 @@ public class LoginBean implements Serializable{
 	
 	public String realizarLogin(){
 		if (usuario.getUsuario().equals("admin") && usuario.getSenha().equals("123")) {
-			return "/index.xhtml?faces-redirect=true";
+			return "/usuarios.xhtml?faces-redirect=true";
 		} else {
-			//Mostrar Mensagem
+			FacesUtil.msgErro("Login Incorreto");
 		}
 		
 		return null;

@@ -1,8 +1,10 @@
 package model;
 
 public class Usuario {
-
+	
+	
 	private String nome;
+	private Integer idade;
 	private String usuario;
 	private String senha;
 
@@ -39,5 +41,14 @@ public class Usuario {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
+
+	public Integer getIdade() {
+		return idade;
+	}
+
+	public void setIdade(Integer idade) {
+		this.idade = idade;
+	}
+	
 
 }

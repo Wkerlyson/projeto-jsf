@@ -8,10 +8,11 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
 import model.Usuario;
+import util.FacesUtil;
 
 @ManagedBean
 @ViewScoped
-public class IndexBean implements Serializable{
+public class UsuarioBean implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -21,11 +22,9 @@ public class IndexBean implements Serializable{
 	public void adicionarUsuario(){
 		usuarios.add(usuario);
 		usuario = new Usuario();
+		FacesUtil.msgInfo("Usuário Adicionado");
 	}
 	
-	public void limpar(){
-		usuarios = new ArrayList<>();
-	}
 	
 	public void mostrarSelecionado(Usuario user){
 		usuario.setNome(user.getNome());

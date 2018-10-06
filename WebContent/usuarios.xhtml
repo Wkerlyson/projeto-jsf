@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+
+</h:head>
+
+<h:body>
+	<br />
+	<h:form id="frm">
+		
+		<h3>SYS-SELENIUM</h3>
+		
+		<p:messages closable="true" />
+
+		<p:inputText id="cNome" value="#{usuarioBean.usuario.nome}" placeholder="Nome" required="true"
+			requiredMessage="Nome é obrigatório"/>
+		<p:inputNumber id="cIdade" minValue="1" maxValue="100"		value="#{usuarioBean.usuario.idade}" placeholder="Idade"
+			rendered="true" requiredMessage="Idade é obrigatório" style="margin-left: 5px"/>
+
+		<p:commandButton style="margin-left: 5px" update="frm"
+			action="#{usuarioBean.adicionarUsuario()}" value="Adicionar Usuário" />
+
+		<p:button style="margin-left: 5px" outcome="login" value="sair" />
+
+		<br />
+		<br />
+
+		<p:dataTable id="tabela-usuarios" value="#{usuarioBean.usuarios}"
+			var="usuario" emptyMessage="Nenhum usuario adicionado">
+
+			<p:column headerText="Nome">
+				<h:outputLabel value="#{usuario.nome}" />
+			</p:column>
+
+			<p:column headerText="Idade" width="100">
+				<h:outputLabel value="#{usuario.idade}" />
+			</p:column>
+
+		</p:dataTable>
+
+
+		<p:dialog id="dialog" widgetVar="dialog" closable="true"
+			header="Detalhes" modal="true" width="300">
+
+			<br />
+
+			<p:outputLabel value="#{usuarioBean.usuario.nome}" />
+
+		</p:dialog>
+	</h:form>
+
+
+</h:body>
+
+</html>
