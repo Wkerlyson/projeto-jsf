@@ -7,7 +7,7 @@ public class Usuario {
 	private String nome;
 	private String sobrenome;
 	private String telefone;
-	private Integer idade;
+	private String cidade;
 	
 	private String usuario;
 	private String senha;
@@ -46,12 +46,13 @@ public class Usuario {
 		this.senha = senha;
 	}
 
-	public Integer getIdade() {
-		return idade;
+
+	public String getCidade() {
+		return cidade;
 	}
 
-	public void setIdade(Integer idade) {
-		this.idade = idade;
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
 	}
 
 	public String getSobrenome() {
