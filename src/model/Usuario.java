@@ -3,8 +3,12 @@ package model;
 public class Usuario {
 	
 	
+	
 	private String nome;
+	private String sobrenome;
+	private String telefone;
 	private Integer idade;
+	
 	private String usuario;
 	private String senha;
 
@@ -49,6 +53,24 @@ public class Usuario {
 	public void setIdade(Integer idade) {
 		this.idade = idade;
 	}
+
+	public String getSobrenome() {
+		return sobrenome;
+	}
+
+	public void setSobrenome(String sobrenome) {
+		this.sobrenome = sobrenome;
+	}
+
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+	
+	
 	
 
 }

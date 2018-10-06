@@ -21,6 +21,12 @@
 			requiredMessage="Nome é obrigatório"/>
 		<p:inputNumber id="cIdade" minValue="1" maxValue="100"		value="#{usuarioBean.usuario.idade}" placeholder="Idade"
 			rendered="true" requiredMessage="Idade é obrigatório" style="margin-left: 5px"/>
+			
+			<p:inputText id="cSobrenome" value="#{usuarioBean.usuario.sobrenome}" placeholder="Sobrenome"
+			rendered="true" requiredMessage="Sobrenome é obrigatório" style="margin-left: 5px"/>
+			
+			<p:inputText id="cTelefone" value="#{usuarioBean.usuario.telefone}" placeholder="Telefone"
+			rendered="true" requiredMessage="Telefone é obrigatório" style="margin-left: 5px"/>
 
 		<p:commandButton style="margin-left: 5px" update="frm"
 			action="#{usuarioBean.adicionarUsuario()}" value="Adicionar Usuário" />
@@ -37,9 +43,19 @@
 				<h:outputLabel value="#{usuario.nome}" />
 			</p:column>
 
+			<p:column headerText="Sobrenome">
+				<h:outputLabel value="#{usuario.sobrenome}" />
+			</p:column>
+
+			<p:column headerText="Telefone">
+				<h:outputLabel value="#{usuario.telefone}" />
+			</p:column>
+
 			<p:column headerText="Idade" width="100">
 				<h:outputLabel value="#{usuario.idade}" />
 			</p:column>
+			
+			
 
 		</p:dataTable>
 
